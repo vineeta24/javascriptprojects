@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+body{
+	font-family:arial;
+	font-size:13px;
+	line-height:1.5em;
+}
+
+.player-body{
+	background: #e6ad0a;
+}
+
+#audio-image{
+	position:relative;
+	overflow: hidden;
+	height: 100%;
+}
+.cover{
+	width:100%;
+	z-index: 1;
+}
+
+#buttons{
+	display: block;
+	text-align: center;
+	padding: 25px 0;
+}
+i{
+	padding: 5px 3px;
+	display: inline-block;
+}
+i:active{
+	transform: translateY(2px);
+}
+.fa-play-circle, .fa-pause-circle, .fa-stop-circle{
+	font-size: 70px !important;
+	color: black;
+}
+
+.fa-backward, .fa-forward {
+	font-size: 60px !important;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#audio-info{
+	font-size: 20px;
+	text-align:center;
+	font-weight: 700;
+}
+#audio-info .title{
+	font-size: 28px;
+}
+
+#progressBar { 
+   width:80%;
+   background: #111;
+   height:10px;
+   float:left;
+   display: flex;
+   margin-bottom: 10%;
+}
+#progress {
+   background: blue;
+   height:10px;
+   display: inline-flex;
+ }
+#duration{
+	top:0;
+	right:10px;
+	margin-left: 5px;
+	padding:4px 8px;
+	background:#000;
+	border-radius:5px;
+	color: #fff;
+}
+.fa-headphones{
+	color: #fff;
+	font-size: 100px !important;
+}
+
+@media (min-width: 1050px){
+#audio-image{
+	height: 75vh;
+}
+}

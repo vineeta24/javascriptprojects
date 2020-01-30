@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audio player | vineetakande.com</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="playerstyle.css">
+
+	<!--Bootstap stylesheet link -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="jquery.js"></script>
+</head>
+
+<body>
+<div id="audio-image">
+  <img class="cover" />
+</div>
+
+<div class="container-fluid player-body">
+<div class="row">  
+<div class="col-lg-3">
+    <div id="buttons">
+      <i id="prev" class="fa fa-backward" aria-hidden="true"></i>
+      <i id="play" class="fa fa-play-circle" aria-hidden="true"></i>
+      <i id="pause" class="fa fa-pause-circle" aria-hidden="true"></i>
+      <i id="stop" class="fa fa-stop-circle" aria-hidden="true"></i>
+      <i id="next" class="fa fa-forward" aria-hidden="true"></i>
+     </div>
+</div>
+<div class="col-lg-4 pt-1 align-middle my-auto">
+  <div id="audio-player">
+   <div id="audio-info">
+    <p class="title"></p>
+    <p class="artist"></p>
+    </div>
+         <div id="tracker">
+      <div id="progressBar">
+        <span id="progress"></span>
+      </div>
+      <span id="duration"></span>
+     </div>
+  </div>
+</div>
+<div class="col-lg-3" style="background: black;">
+  <img id="wave" src="images/wave1.png" style="width: 100%" />
+</div>
+<div class="col-lg-2 text-center pt-3" style="background: #161694;">
+  <i class="fa fa-headphones" aria-hidden="true"></i>
+</div>
+
+</div>
+</div>
+
+
+<div style="display: none;">
+	     <ul id="playlist">
+        <li song="Bad Liar.mp3" cover="imagine_dragons.jpg" artist="Imagine Dragons">Imagine Dragons - Bad Liar</li>
+        <li song="Spacebound.mp3" cover="eminem.jpg" artist="eminem">Eminem - Spacebound</li>
+        <li song="Numb.mp3" cover="linking_park.jpg" artist="Linking Park">Linking Park - Ambition</li>
+        <li song="Dangerous.mp3" cover="akon.jpg" artist="Akon">Akon - Dangerous</li>
+        <li song="Believe.mp3" cover="cher.jpg" artist="Cher">Cher - Believe</li>
+        <li song="Bailando.mp3" cover="enrique.jpg" artist="Enrique">Enrique - Bailando</li>
+        <li song="Girls_like_you.mp3" cover="maroon5.jpg" artist="Maroon5">Maroon5 - Girls Like You</li>
+    </ul>
+</div>
+
+  <script src="audio.js"></script>
+
+</body>
+</html>
