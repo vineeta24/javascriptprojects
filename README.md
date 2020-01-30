@@ -1,3 +1,3 @@
 # JavaScript Projects
 
-:+1: Intresting Javascript Learning projects :shipit:
+:+1: Intresting Javascript Learning projects :alien:
