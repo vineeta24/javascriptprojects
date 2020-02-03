@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gradient-color API</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="web-api,application,website,jsapi,cssfun,Javascript, gradient-color,vineetakande">
+<meta name="description" content="Gradient color web javascript API">
+<meta name="author" content="vineeta kande">
+<!-- favicon -->
+<link rel="icon" href="http://www.vineetakande.com/favicon.ico">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- style -->
+<style>
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	width: 100%;
+}
+.header{
+	box-shadow: 0 4px 11px 0 rgba(208, 215, 196, 0.37);
+	padding-top: 20px;
+}
+.header .col-lg-4{
+	padding-bottom: 10px;
+}
+h1{
+	font-family: 'Pacifico', cursive;
+	color: skyblue;
+}
+p{
+	margin-bottom: 0;
+}
+button {
+	background-color: #ff8207;
+	border: none;
+	border-radius: 10px;
+	padding: 5px 30px;
+	color: #fff;
+	font-size: 18px;
+	user-select: none;
+	margin: 5px;
+}
+button:focus{
+	outline: none;
+}
+
+i{
+	padding:0 10px;
+}
+.fa {
+	font-size: 40px;
+	color: #bdbdbd;
+}
+.colorvalue .color, p {
+	padding: 5px;
+}
+.color{
+   content: '';
+   display: inline-block;
+   width: 15px;
+   height: 15px;
+   align-self: center;
+}
+#color1{background-color: #d0d7c4;} #color2{background-color: #f0e551;}
+#gradient {
+	width: 100%;
+	height: 80vh;
+	background: linear-gradient(#d0d7c4, #f0e551);
+}
+.popupbox{
+	width: 50%;
+	padding: 10px;
+	background-color: #dee2e6;
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	display: none;
+}
+.popupbox p{
+	background-color: #fff;
+	padding: 10px 8px;
+	border-radius: 5px;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.close{
+	transition: 2s;
+}
+
+@media (max-width: 800px){
+	.popupbox{
+		width: 90%;
+		left: 5%;
+	}
+}
+</style>
+</head>
+<body>
+<div class=" header container-fluid">
+<div class="row">
+<div class="col-lg-4 text-center">
+<h1>Gradientfun</h1>
+</div>
+<div class="content col-lg-4">
+</div>
+<div class="col-lg-4">
+<span><button onclick="makeid()">Change gradient</button></span>
+<span><a href="https://github.com/" target="_blank data-toggle="tooltip" title="Follow me on Github"><i class="fa fa-github" aria-hidden="true"></i></a></span>
+<span><a data-toggle="tooltip" title="css code"><i class="fa fa-code" aria-hidden="true"></i></a></span>
+</div>
+</div>
+</div>
+
+<div class="container ">
+<div class="colorvalue d-flex justify-content-center">
+<span class="color" id="color1"></span>
+<p id="color1-value">#d0d7c4</p>
+<p>&#8594;</p>
+<span class="color" id="color2"></span>
+<p id="color2-value">#f0e551</p>
+</div>	
+</div>
+
+<div id="gradient"></div>
+
+<div class="popupbox">
+<span class="close">&times;</span>
+<h4>Copy CSS Code</h4>
+<p id="popup-text">background: -webkit-linear-gradient(#d0d7c4, #f0e551);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(#d0d7c4, #f0e551); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+</p>
+</div>
+<script>
+  function makeid() {
+  var text1 = "";
+  var text2 = "";
+  var hex1, hex2;
+  var possible = "abcdef0123456789";
+
+  for (var i = 0; i < 6; i++){
+    text1 += possible.charAt(Math.floor(Math.random() * possible.length));
+	text2 += possible.charAt(Math.floor(Math.random() * possible.length));
+	hex1 = '#'+ text1;
+	hex2 = '#'+ text2;
+} 
+    document.getElementById("gradient").style.background = "linear-gradient("+ hex1 +", "+ hex2 +")";
+    document.getElementById("color1").style.backgroundColor = hex1;
+    document.getElementById("color1-value").innerHTML = hex1;
+    document.getElementById("color2").style.backgroundColor = hex2;
+    document.getElementById("color2-value").innerHTML = hex2;
+    document.getElementById('popup-text').innerHTML = "background: -webkit-linear-gradient("+hex1+ ", " +hex2+ "); /*Chrome 10-25, Safari 5.1-6 */<br>background: linear-gradient(" +hex1+ ", " +hex2+ "); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */";
+
+}
+
+$(".fa-code").click(function(){
+	$(".popupbox").show();
+});
+
+$(".close").click(function(){
+	$(".popupbox").hide();
+});
+
+
+</script>
+</body>
+</html>
+
